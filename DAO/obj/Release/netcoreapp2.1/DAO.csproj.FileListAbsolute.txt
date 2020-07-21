@@ -1,0 +1,14 @@
+F:\netcore\MyWebCore\DAO\bin\Release\netcoreapp2.1\DAO.deps.json
+F:\netcore\MyWebCore\DAO\bin\Release\netcoreapp2.1\DAO.dll
+F:\netcore\MyWebCore\DAO\bin\Release\netcoreapp2.1\DAO.pdb
+F:\netcore\MyWebCore\DAO\bin\Release\netcoreapp2.1\Common.dll
+F:\netcore\MyWebCore\DAO\bin\Release\netcoreapp2.1\Model.dll
+F:\netcore\MyWebCore\DAO\bin\Release\netcoreapp2.1\Common.pdb
+F:\netcore\MyWebCore\DAO\bin\Release\netcoreapp2.1\Model.pdb
+F:\netcore\MyWebCore\DAO\obj\Release\netcoreapp2.1\DAO.csprojAssemblyReference.cache
+F:\netcore\MyWebCore\DAO\obj\Release\netcoreapp2.1\DAO.csproj.CoreCompileInputs.cache
+F:\netcore\MyWebCore\DAO\obj\Release\netcoreapp2.1\DAO.AssemblyInfoInputs.cache
+F:\netcore\MyWebCore\DAO\obj\Release\netcoreapp2.1\DAO.AssemblyInfo.cs
+F:\netcore\MyWebCore\DAO\obj\Release\netcoreapp2.1\DAO.csproj.CopyComplete
+F:\netcore\MyWebCore\DAO\obj\Release\netcoreapp2.1\DAO.dll
+F:\netcore\MyWebCore\DAO\obj\Release\netcoreapp2.1\DAO.pdb

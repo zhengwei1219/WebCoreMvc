@@ -1,0 +1,14 @@
+F:\netcore\MyWebCore\BLL\bin\Debug\netcoreapp2.1\BLL.deps.json
+F:\netcore\MyWebCore\BLL\bin\Debug\netcoreapp2.1\BLL.dll
+F:\netcore\MyWebCore\BLL\bin\Debug\netcoreapp2.1\BLL.pdb
+F:\netcore\MyWebCore\BLL\bin\Debug\netcoreapp2.1\Common.dll
+F:\netcore\MyWebCore\BLL\bin\Debug\netcoreapp2.1\Model.dll
+F:\netcore\MyWebCore\BLL\bin\Debug\netcoreapp2.1\Common.pdb
+F:\netcore\MyWebCore\BLL\bin\Debug\netcoreapp2.1\Model.pdb
+F:\netcore\MyWebCore\BLL\obj\Debug\netcoreapp2.1\BLL.csprojAssemblyReference.cache
+F:\netcore\MyWebCore\BLL\obj\Debug\netcoreapp2.1\BLL.csproj.CoreCompileInputs.cache
+F:\netcore\MyWebCore\BLL\obj\Debug\netcoreapp2.1\BLL.AssemblyInfoInputs.cache
+F:\netcore\MyWebCore\BLL\obj\Debug\netcoreapp2.1\BLL.AssemblyInfo.cs
+F:\netcore\MyWebCore\BLL\obj\Debug\netcoreapp2.1\BLL.csproj.CopyComplete
+F:\netcore\MyWebCore\BLL\obj\Debug\netcoreapp2.1\BLL.dll
+F:\netcore\MyWebCore\BLL\obj\Debug\netcoreapp2.1\BLL.pdb

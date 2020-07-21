@@ -1,0 +1,12 @@
+F:\netcore\MyWebCore\Workflows.DAO\bin\Debug\netcoreapp2.1\Workflows.DAO.deps.json
+F:\netcore\MyWebCore\Workflows.DAO\bin\Debug\netcoreapp2.1\Workflows.DAO.dll
+F:\netcore\MyWebCore\Workflows.DAO\obj\Debug\netcoreapp2.1\Workflows.DAO.csproj.CoreCompileInputs.cache
+F:\netcore\MyWebCore\Workflows.DAO\obj\Debug\netcoreapp2.1\Workflows.DAO.AssemblyInfoInputs.cache
+F:\netcore\MyWebCore\Workflows.DAO\obj\Debug\netcoreapp2.1\Workflows.DAO.AssemblyInfo.cs
+F:\netcore\MyWebCore\Workflows.DAO\bin\Debug\netcoreapp2.1\Workflows.DAO.pdb
+F:\netcore\MyWebCore\Workflows.DAO\bin\Debug\netcoreapp2.1\Workflows.dll
+F:\netcore\MyWebCore\Workflows.DAO\bin\Debug\netcoreapp2.1\Workflows.pdb
+F:\netcore\MyWebCore\Workflows.DAO\obj\Debug\netcoreapp2.1\Workflows.DAO.csprojAssemblyReference.cache
+F:\netcore\MyWebCore\Workflows.DAO\obj\Debug\netcoreapp2.1\Workflows.DAO.csproj.CopyComplete
+F:\netcore\MyWebCore\Workflows.DAO\obj\Debug\netcoreapp2.1\Workflows.DAO.dll
+F:\netcore\MyWebCore\Workflows.DAO\obj\Debug\netcoreapp2.1\Workflows.DAO.pdb

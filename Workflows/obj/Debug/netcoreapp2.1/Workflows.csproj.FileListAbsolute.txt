@@ -1,0 +1,9 @@
+F:\netcore\MyWebCore\Workflows\bin\Debug\netcoreapp2.1\Workflows.deps.json
+F:\netcore\MyWebCore\Workflows\bin\Debug\netcoreapp2.1\Workflows.dll
+F:\netcore\MyWebCore\Workflows\bin\Debug\netcoreapp2.1\Workflows.pdb
+F:\netcore\MyWebCore\Workflows\obj\Debug\netcoreapp2.1\Workflows.csprojAssemblyReference.cache
+F:\netcore\MyWebCore\Workflows\obj\Debug\netcoreapp2.1\Workflows.csproj.CoreCompileInputs.cache
+F:\netcore\MyWebCore\Workflows\obj\Debug\netcoreapp2.1\Workflows.AssemblyInfoInputs.cache
+F:\netcore\MyWebCore\Workflows\obj\Debug\netcoreapp2.1\Workflows.AssemblyInfo.cs
+F:\netcore\MyWebCore\Workflows\obj\Debug\netcoreapp2.1\Workflows.dll
+F:\netcore\MyWebCore\Workflows\obj\Debug\netcoreapp2.1\Workflows.pdb

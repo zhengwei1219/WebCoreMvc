@@ -1,0 +1,9 @@
+F:\netcore\MyWebCore\Common\bin\Debug\netcoreapp2.1\Common.deps.json
+F:\netcore\MyWebCore\Common\bin\Debug\netcoreapp2.1\Common.dll
+F:\netcore\MyWebCore\Common\bin\Debug\netcoreapp2.1\Common.pdb
+F:\netcore\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.csprojAssemblyReference.cache
+F:\netcore\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.csproj.CoreCompileInputs.cache
+F:\netcore\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.AssemblyInfoInputs.cache
+F:\netcore\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.AssemblyInfo.cs
+F:\netcore\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.dll
+F:\netcore\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.pdb
