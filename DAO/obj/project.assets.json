@@ -3595,11 +3595,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\netcore\\MyWebCore\\DAO\\DAO.csproj",
+      "projectUniqueName": "F:\\Project\\MyWebCore\\DAO\\DAO.csproj",
       "projectName": "DAO",
-      "projectPath": "F:\\netcore\\MyWebCore\\DAO\\DAO.csproj",
+      "projectPath": "F:\\Project\\MyWebCore\\DAO\\DAO.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "F:\\netcore\\MyWebCore\\DAO\\obj\\",
+      "outputPath": "F:\\Project\\MyWebCore\\DAO\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3613,16 +3613,16 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "F:\\netcore\\MyWebCore\\Common\\Common.csproj": {
-              "projectPath": "F:\\netcore\\MyWebCore\\Common\\Common.csproj"
+            "F:\\Project\\MyWebCore\\Common\\Common.csproj": {
+              "projectPath": "F:\\Project\\MyWebCore\\Common\\Common.csproj"
             },
-            "F:\\netcore\\MyWebCore\\Model\\Model.csproj": {
-              "projectPath": "F:\\netcore\\MyWebCore\\Model\\Model.csproj"
+            "F:\\Project\\MyWebCore\\Model\\Model.csproj": {
+              "projectPath": "F:\\Project\\MyWebCore\\Model\\Model.csproj"
             }
           }
         }

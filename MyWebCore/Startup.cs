@@ -34,7 +34,7 @@ namespace MyWebCore
             services.AddMvc();
 
             //
-            services.AddDbContextPool<GeneralDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContextPool<GeneralDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),b=>b.UseRowNumberForPaging()));
 
             services.AddAuthentication(o =>
             {

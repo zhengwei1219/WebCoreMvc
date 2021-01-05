@@ -1,0 +1,132 @@
+body{ margin:0px; text-align:center; font-size:13px; line-height:150%;}
+body,th,td,div,li{ font-size:13px; line-height:150%;}
+#top1{ width:800px; height:62px;}
+#top2{ width:800px; overflow-x:hidden; height:44px;}
+#top22{ width:800px; overflow-x:hidden; height:44px;border:1px #404248 solid; padding:1px; background:#11141D;}
+#top_logo{float:left; margin:2px 5px; overflow-x:hidden}
+#top_l{float:right; margin:20px 5px; overflow-x:hidden}
+#cer { width:800px; height:100px; margin-top:0px; background:#11141D;}
+#left{ float:left; width:220px;margin-top:2px; height:551px;overflow-x:hidden;border:1px #404248 solid; padding:1px;}
+#right{ float:right; width:570px;margin-top:2px;height:551px;overflow-x:hidden;border:1px #404248 solid; padding:1px;}
+#left1{ float:left; width:211px;margin-top:20px; height:760px;overflow:hidden;}
+#right1{ float:right; width:540px;margin-top:20px;height:760px;overflow:hidden;}
+#cer-1-1 { width:570px; height:100px; margin-top:0px; }
+#right-1-1{ float:left; width:448px;height:246px}
+#right-1-2{ float:right; width:292;height:246px;overflow:hidden;background:url(http://youwei.store//images/xinwen.jpg);}
+#right-1-22{ float:right; width:740;height:162px;overflow:hidden;background:url(http://youwei.store//images/xin.jpg);}
+#right-1-22-1{ float:right; width:735;height:142px;overflow:hidden;margin-top:20px;}
+#xinwen{ float:right; width:292;height:200px;overflow:hidden;margin-top:66px;margin-left:5px;}
+#left1{ float:left; width:247px; text-align:left;}
+#right1{ float:right; width:740px; height:100%;margin-top:0px;}
+
+
+
+#lm_l{ width:245px; border:1px #8BCDEC solid; padding:1px; float:left; height:200px;overflow:hidden;}
+#lm_1_t{ width:241px; height:30px; background:url(http://youwei.store//images/dq_08.jpg) repeat-x; }
+#lm_1_t3{ width:570px; height:47px; }
+#lm_1_t333{ width:570px; height:34px; background:url(http://youwei.store//images/ch1.jpg) repeat-x;}
+#lm_1_ttt{ width:241px; height:40px; }
+#lm_1_tt{ width:241px; height:40px; background:url(http://youwei.store//images/dq_081.gif) repeat-x; }
+#lm_2{ width:473px; height:200px; overflow:hidden; float:left; margin-left:12px;}
+#lm_2_t{ width:100%; height:35px; background:url(http://youwei.store//images/lm-2.gif) repeat-x;}
+#lm_3{ width:241px;  margin-left:0px; float:left; height:240px;}
+#lm_3w{ width:241px;  margin-left:0px; float:left; height:100px;}
+#lm_33{ width:570px;  margin-right:1px; float:right; height:240px;}
+
+#lm_4{ width:473px; height:200px; margin-top:10px; overflow:hidden; float:left; margin-left:12px;}
+#lm_5{ width:730px; height:178px; background:url(http://youwei.store//images/cp-bg.gif) no-repeat; float:left; overflow:hidden; margin-top:10px;}
+#lm_6{ width:242px; height:35px; background:url(http://youwei.store//images/lm-3.gif) no-repeat; overflow:hidden;}
+#lm_ny{ width:260px;  height:200px;overflow-x:hidden; margin-bottom:0px;}
+#lm_rt{ width:737px;  height:100% ;overflow-x:hidden; margin-bottom:0px;}
+
+.scx {text-decoration: line-through;}
+
+
+
+
+
+
+
+
+
+#title_li{ float:left; color:#ffffff; font-size:13px; font-weight:bolder; padding-left:15px; padding-top:5px;}
+#title_li44{ float:left; color:#0D5DCC; font-size:13px; font-weight:bolder; padding-left:15px; padding-top:0px;}
+#title_li3{ float:left; color:#0D5DCC; font-size:13px; font-weight:bolder; padding-left:10px; padding-top:12px;}
+#title_lit{ float:left; color:#2898BE; font-size:13px; font-weight:bolder; padding-left:12px; padding-top:15px;}
+#more_li{ float:right; padding-right:10px; padding-top:10px;}
+
+#link{ width:800px; height:36px; border:1px #8BCDEC solid; background:#F7FCFF; clear:both; margin-top:10px; text-align:left; padding-top:7px; overflow-x:hidden}
+	
+#foot{ overflow-x:hidden;  width:800px;  margin-top:0px;}
+#foot_logo{float:left; width:290px; overflow-x:hidden; margin-top:8px;}
+#copyr{ float:left; width:800px; height:100px; overflow-x:hidden; margin-top:0px;background:url(http://youwei.store//images/foot.jpg) repeat-x;}
+
+#p_nr{ width:220px; padding:0px; overflow-x:hidden; text-align:left;padding-top:8px;}
+#p_nrcpk{ width:560px; padding:0px; overflow-x:hidden; text-align:left;padding-top:8px;}
+
+#p_nrjj{ width:98%; padding:0px; height:260px; overflow-y:hidden; text-align:left;padding-top:0px;}
+#p_nrjjnew{ width:98%; padding:0px; height:260px;  text-align:left;padding-top:0px;}
+#p_nrjj2{ width:94%; padding:0px; height:160px; overflow-y:hidden; text-align:left;padding-top:0px;border:2px #ffffff solid; padding:1px;}
+#p_nrjjj{ width:90%; padding:0px; height:260px;  text-align:left;padding-top:0px;}
+#p_nrpage{ width:100%;  height:720px; padding:0px; overflow-x:hidden; text-align:left;padding-top:0px;background:#F5F5F5;}
+#p_nrpage2{ width:98%;  height:720px; padding:0px; overflow-x:hidden; text-align:left;padding-top:0px;}
+#p_nrpage1{ width:90%;  height:200px; padding:0px; overflow-x:hidden; text-align:left;padding-top:0px;}
+#p_nrpagezl{ width:95%;  height:720px; padding:0px; overflow:hidden; text-align:left;padding-top:0px;}
+#p_nr1{ width:90%; height:377px; padding:0px; overflow-x:hidden; text-align:left;border:2px #E3E3E3 solid;margin-left:5px;}
+	#news_title{width:96%; height:26px; border-bottom:1px #CCCCCC dashed; text-align:left; padding:4px;}
+a:link {
+	color: #333333;
+	text-decoration: none;
+}
+a:visited {
+	text-decoration: none;
+	color: #333333;
+}
+a:hover {
+	text-decoration: underline;
+	color: #1933d1;
+}
+a:active {
+	text-decoration: none;
+}
+#left-pro {border-bottom:1px #666666 dashed; width:100%; height:25px; padding-left:0px;padding-top:2px;background:url(../image/tj.gif) no-repeat;}
+#left-pro2 {border-bottom:0px #996600 dashed; width:100%; height:20px; padding-top:3px;}
+#dh		{ width:715px;margin:auto auto 8px auto;text-align:left;color:#333333;}
+.pl		{ background-color:#B7DDF6;padding:5px 5px 0 0;height:25px;}
+.pm		{ float:right;}
+.pg		{ float:left;margin:0 0 0 3px;width:auto;min-width:26px;line-height:18px;text-align:center;font-family:Tahoma;border:1px solid #87AFD0;background-color:#E6F7FF;}
+.pg a 	{ width:26px;min-width:26px;display:inline-block;white-space:nowrap;}
+.pc		{ float:left;margin:0 0 0 3px;width:26px;min-width:26px;line-height:18px;text-align:center;font-family:Tahoma;border:1px solid #5492c9;background-color:#68a6dd;}
+.pd		{ float:left;margin:0 0 0 3px;width:auto;min-width:26px;text-align:center;border:0px solid #5492c9;}
+
+
+.submit_tj{ background:url("../image/34.png") no-repeat left top; width:46px; height:23px; border:0px; cursor:pointer;}
+.submit_zc{ background:url("../image/34.png") no-repeat left top; width:46px; height:23px; border:0px;cursor:pointer;}
+
+.submit_tj2{ background:url("../image/dd.gif") no-repeat left top; width:125px; height:41px; border:0px; cursor:pointer;}
+.submit_zc2{ background:url("../image/re.gif") no-repeat left top; width:125px; height:41px; border:0px;cursor:pointer;}
+
+.submit_tj3{ background:url("../image/2-7.gif") no-repeat left top; width:118px; height:35px; border:0px; cursor:pointer; color:#FFFFFF;font-weight:bolder;}
+
+.submit_tj4{ background:url("../image/h_r4_c288.gif") no-repeat left top; width:58px; height:21px; border:0px; cursor:pointer; color:#FFFFFF; padding-top:1px;}
+
+.submit_tj5{ background:url("../image/dlr.gif") no-repeat left top; width:86px; height:29px; border:0px; cursor:pointer; color:#FFFFFF; font-weight:bolder;}
+
+.box2 a { color:#fff; font-size:14px ;font-weight: bold;}
+.box2 a:link { color: #fff; text-decoration: none;}
+.box2 a:visited { text-decoration: none; color: #fff;}
+.box2 a:hover { text-decoration: none; color:#9d6242;}
+.box2 a:active { text-decoration: none; color: #fff;}
+
+.box3 a { color:#c4c4c4; font-size:13px;}
+.box3 a:link { color: #c4c4c4; text-decoration: none;}
+.box3 a:visited { text-decoration: none; color: #c4c4c4;}
+.box3 a:hover { text-decoration: none; color:#9d6242;}
+.box3 a:active { text-decoration: none; color: #c4c4c4;}
+
+li {
+    list-style: none;
+}
+.cp{
+	float:left;
+}

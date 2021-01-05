@@ -7,3 +7,11 @@ F:\netcore\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.AssemblyInfoInputs.ca
 F:\netcore\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.AssemblyInfo.cs
 F:\netcore\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.dll
 F:\netcore\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.pdb
+F:\Project\MyWebCore\Common\bin\Debug\netcoreapp2.1\Common.deps.json
+F:\Project\MyWebCore\Common\bin\Debug\netcoreapp2.1\Common.dll
+F:\Project\MyWebCore\Common\bin\Debug\netcoreapp2.1\Common.pdb
+F:\Project\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.csproj.CoreCompileInputs.cache
+F:\Project\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.AssemblyInfoInputs.cache
+F:\Project\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.AssemblyInfo.cs
+F:\Project\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.dll
+F:\Project\MyWebCore\Common\obj\Debug\netcoreapp2.1\Common.pdb

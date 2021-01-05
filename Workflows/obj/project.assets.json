@@ -694,11 +694,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\netcore\\MyWebCore\\Workflows\\Workflows.csproj",
+      "projectUniqueName": "F:\\Project\\MyWebCore\\Workflows\\Workflows.csproj",
       "projectName": "Workflows",
-      "projectPath": "F:\\netcore\\MyWebCore\\Workflows\\Workflows.csproj",
+      "projectPath": "F:\\Project\\MyWebCore\\Workflows\\Workflows.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "F:\\netcore\\MyWebCore\\Workflows\\obj\\",
+      "outputPath": "F:\\Project\\MyWebCore\\Workflows\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -712,7 +712,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
         "netcoreapp2.1": {

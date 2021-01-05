@@ -10,3 +10,15 @@ F:\netcore\MyWebCore\Model\bin\Debug\netcoreapp2.1\Common.pdb
 F:\netcore\MyWebCore\Model\obj\Debug\netcoreapp2.1\Model.csproj.CopyComplete
 F:\netcore\MyWebCore\Model\obj\Debug\netcoreapp2.1\Model.dll
 F:\netcore\MyWebCore\Model\obj\Debug\netcoreapp2.1\Model.pdb
+F:\Project\MyWebCore\Model\bin\Debug\netcoreapp2.1\Model.deps.json
+F:\Project\MyWebCore\Model\bin\Debug\netcoreapp2.1\Model.dll
+F:\Project\MyWebCore\Model\bin\Debug\netcoreapp2.1\Model.pdb
+F:\Project\MyWebCore\Model\bin\Debug\netcoreapp2.1\Common.dll
+F:\Project\MyWebCore\Model\bin\Debug\netcoreapp2.1\Common.pdb
+F:\Project\MyWebCore\Model\obj\Debug\netcoreapp2.1\Model.csprojAssemblyReference.cache
+F:\Project\MyWebCore\Model\obj\Debug\netcoreapp2.1\Model.csproj.CoreCompileInputs.cache
+F:\Project\MyWebCore\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfoInputs.cache
+F:\Project\MyWebCore\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfo.cs
+F:\Project\MyWebCore\Model\obj\Debug\netcoreapp2.1\Model.csproj.CopyComplete
+F:\Project\MyWebCore\Model\obj\Debug\netcoreapp2.1\Model.dll
+F:\Project\MyWebCore\Model\obj\Debug\netcoreapp2.1\Model.pdb

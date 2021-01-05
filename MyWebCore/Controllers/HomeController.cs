@@ -6,14 +6,20 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
 namespace MyWebCore
-{ 
+{
+
     public class HomeController : BaseContoller
-    { 
+    {
+
         public IActionResult Index()
-        { 
+        {
+
             return View();
         }
-         
+        public IActionResult GetNewsInfo(int id)
+        {
+            return View("NewsInfo");
+        }
 
         //public IActionResult Contact()
         //{

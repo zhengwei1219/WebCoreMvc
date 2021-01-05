@@ -1,0 +1,36 @@
+*
+{
+    line-height: 24px;
+    list-style-type: none;
+    padding-bottom: 0px;
+    padding-left: 0px;
+    padding-right: 0px;
+    padding-top: 0px;
+     
+    border-bottom: medium none;
+    border-left: medium none;
+    border-top: medium none;
+    border-right: medium none;
+    font-weight: normal;
+    list-style-image: none;
+    text-decoration: none;
+   
+}
+
+#btnlistID LI
+{
+    color: #fff !important;
+}
+#ksslide
+{
+    width: 745px;
+
+    height: 279px;
+    text-align:left;
+}
+#ksslide IMG
+{
+    width: 745px;
+    float: left;
+    height: 279px;
+}

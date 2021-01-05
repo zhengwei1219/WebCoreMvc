@@ -3554,11 +3554,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\netcore\\MyWebCore\\Common\\Common.csproj",
+      "projectUniqueName": "F:\\Project\\MyWebCore\\Common\\Common.csproj",
       "projectName": "Common",
-      "projectPath": "F:\\netcore\\MyWebCore\\Common\\Common.csproj",
+      "projectPath": "F:\\Project\\MyWebCore\\Common\\Common.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "F:\\netcore\\MyWebCore\\Common\\obj\\",
+      "outputPath": "F:\\Project\\MyWebCore\\Common\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3572,7 +3572,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
         "netcoreapp2.1": {

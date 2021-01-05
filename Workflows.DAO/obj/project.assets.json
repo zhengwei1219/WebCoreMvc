@@ -3499,11 +3499,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\netcore\\MyWebCore\\Workflows.DAO\\Workflows.DAO.csproj",
+      "projectUniqueName": "F:\\Project\\MyWebCore\\Workflows.DAO\\Workflows.DAO.csproj",
       "projectName": "Workflows.DAO",
-      "projectPath": "F:\\netcore\\MyWebCore\\Workflows.DAO\\Workflows.DAO.csproj",
+      "projectPath": "F:\\Project\\MyWebCore\\Workflows.DAO\\Workflows.DAO.csproj",
       "packagesPath": "C:\\Users\\Administrator\\.nuget\\packages\\",
-      "outputPath": "F:\\netcore\\MyWebCore\\Workflows.DAO\\obj\\",
+      "outputPath": "F:\\Project\\MyWebCore\\Workflows.DAO\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -3517,13 +3517,13 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://www.nuget.org/api/v2/": {}
       },
       "frameworks": {
         "netcoreapp2.1": {
           "projectReferences": {
-            "F:\\netcore\\MyWebCore\\Workflows\\Workflows.csproj": {
-              "projectPath": "F:\\netcore\\MyWebCore\\Workflows\\Workflows.csproj"
+            "F:\\Project\\MyWebCore\\Workflows\\Workflows.csproj": {
+              "projectPath": "F:\\Project\\MyWebCore\\Workflows\\Workflows.csproj"
             }
           }
         }
