@@ -18,6 +18,7 @@ namespace Model
         public DbSet<SysUserLoginLog> SysUserLoginLogs { get; set; }
         public DbSet<SysUserRole> SysUserRoles { get; set; }
         public DbSet<SysPermission> SysPermissions { get; set; }
+        public DbSet<News> newses { get; set; }
 
     }
 }
