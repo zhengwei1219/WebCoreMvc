@@ -22,3 +22,15 @@ F:\Project\MyWebCore\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfo.cs
 F:\Project\MyWebCore\Model\obj\Debug\netcoreapp2.1\Model.csproj.CopyComplete
 F:\Project\MyWebCore\Model\obj\Debug\netcoreapp2.1\Model.dll
 F:\Project\MyWebCore\Model\obj\Debug\netcoreapp2.1\Model.pdb
+D:\MyProject\WebCoreMvc\Model\bin\Debug\netcoreapp2.1\Model.deps.json
+D:\MyProject\WebCoreMvc\Model\bin\Debug\netcoreapp2.1\Model.dll
+D:\MyProject\WebCoreMvc\Model\bin\Debug\netcoreapp2.1\Model.pdb
+D:\MyProject\WebCoreMvc\Model\bin\Debug\netcoreapp2.1\Common.dll
+D:\MyProject\WebCoreMvc\Model\bin\Debug\netcoreapp2.1\Common.pdb
+D:\MyProject\WebCoreMvc\Model\obj\Debug\netcoreapp2.1\Model.csprojAssemblyReference.cache
+D:\MyProject\WebCoreMvc\Model\obj\Debug\netcoreapp2.1\Model.csproj.CoreCompileInputs.cache
+D:\MyProject\WebCoreMvc\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfoInputs.cache
+D:\MyProject\WebCoreMvc\Model\obj\Debug\netcoreapp2.1\Model.AssemblyInfo.cs
+D:\MyProject\WebCoreMvc\Model\obj\Debug\netcoreapp2.1\Model.csproj.CopyComplete
+D:\MyProject\WebCoreMvc\Model\obj\Debug\netcoreapp2.1\Model.dll
+D:\MyProject\WebCoreMvc\Model\obj\Debug\netcoreapp2.1\Model.pdb

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using Microsoft.Extensions.Caching.Memory;
 using Model;
@@ -9,7 +10,7 @@ namespace BLL
     public class NewsService : INewsService
     {
         private IMemoryCache _memoryCache;
-        private const string MODEL_KEY = "General.services.user_{0}";
+        private const string MODEL_KEY = "General.services.news_{0}";
 
         private IRepository<News> _newsRepository;
 
@@ -23,12 +24,12 @@ namespace BLL
 
         public void Add(News news)
         {
-            throw new NotImplementedException();
+            _newsRepository.insert(news, true);
         }
 
-        public List<News> GetAll()
+        public IQueryable<News> GetAll()
         {
-            throw new NotImplementedException();
+           return _newsRepository.Table;
         }
 
         public News GetById(int Id)

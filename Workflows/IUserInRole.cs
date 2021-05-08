@@ -1,8 +1,11 @@
 using System;
 using System.Data;
 using System.Configuration;
-using System.Web.Security;
+
 using System.Collections.Generic;
+using BLL;
+using Microsoft.AspNetCore.Http;
+using System.Linq;
 
 namespace Workflows
 {
@@ -49,7 +52,18 @@ namespace Workflows
 	/// </summary>
 	public class HttpUserInRole : IUserInRole
 	{
-		private HttpUserInRole() { }
+        ISysUserService _userService;
+        ISysRoleService _roleService;
+        ISysUserRoleService _userRole;
+        IHttpContextAccessor _httpContextAccessor;
+        public HttpUserInRole(ISysUserService userService, ISysRoleService roleService, ISysUserRoleService userRole,IHttpContextAccessor httpContextAccessor)
+        {
+            _userService = userService;
+            _httpContextAccessor = httpContextAccessor;
+            _roleService = roleService;
+            _userRole = userRole;
+        }
+        private HttpUserInRole() { }
 		private Dictionary<string, UserRole> rolesDic = new Dictionary<string, UserRole>();
 		private static HttpUserInRole instance = new HttpUserInRole();
 		/// <summary>
@@ -109,8 +123,9 @@ namespace Workflows
 		private void LoadRoles(string userId)
 		{
 			UserRole userRole = new UserRole();
-			userRole.Roles = Roles.GetRolesForUser(userId);
-			userRole.TimeStamp = DateTime.Now;
+            userRole.Roles = _userService.getByAccount(userId).SysUserRoles.Select(s => s.SysRole.Name).ToArray();
+            //userRole.Roles = Roles.GetRolesForUser(userId);
+            userRole.TimeStamp = DateTime.Now;
 			rolesDic[userId] = userRole;
 		}
 
@@ -121,8 +136,10 @@ namespace Workflows
 		/// <returns></returns>
 		public string[] GetUsersInRole(string roleName)
 		{
-			return Roles.GetUsersInRole(roleName);
-		}
+
+            return _userRole.getAll().Where(s => s.SysRole.Name == roleName).Select(s => s.SysUser.Name).ToArray();
+            //return Roles.GetUsersInRole(roleName);
+        }
 		//Ä¬ÈÏ»º´æ30min
 		private int DurationMinutes = 30;
 		/// <summary>

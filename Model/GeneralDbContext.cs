@@ -19,6 +19,7 @@ namespace Model
         public DbSet<SysUserRole> SysUserRoles { get; set; }
         public DbSet<SysPermission> SysPermissions { get; set; }
         public DbSet<News> newses { get; set; }
-
+        public DbSet<FriendlyLink> FriendlyLinks { get; set; }
+        
     }
 }

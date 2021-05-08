@@ -1,0 +1,51 @@
+﻿<div>
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+
+
+        <tr>
+            <td height="50" align="center" valign="top">
+                <div style="width:100%; height:50px; text-align:left; line-height:20px;margin-left:10px">
+                    友情链接：
+                    <div id="FriendlyLink">
+                      
+                    </div>
+                </div>
+            </td>
+        </tr>
+
+        <tr>
+            <td height="60" align="center" background="../../images/fbg.jpg">
+                <table width="980" border="0" cellspacing="0" cellpadding="0">
+                    <tr>
+                        <td height="10"></td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" style="color:#FFF">
+                            COPYRIGHT &#169; 2018-2019 &nbsp;网络投票公司&nbsp; &nbsp;&nbsp;Q Q：3282079595 &nbsp; <br>
+                            技术支持：Powered by EmpireCMS
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="10"></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    $(function () {
+       $.ajax({
+			type: "POST",
+			url: '@(Url.Action("FootView", "Home"))',
+			data: {  },
+           success: function (data) {
+               $("#FriendlyLink").html(data);
+			}, error: function (req, status, error) {
+				alert(error);
+			}
+		});
+    });
+    
+</script>

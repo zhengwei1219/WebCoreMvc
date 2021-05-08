@@ -1,0 +1,192 @@
+﻿
+@{
+    ViewData["Title"] = "系统管理";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/js/dist/bootstrap-3.3.7/css/bootstrap.css" rel="stylesheet" />
+<script src="~/js/simditor/js/jquery-2.1.4.min.js"></script>
+<link href="~/js/simditor/css/simditor.css" rel="stylesheet" />
+<script src="~/js/simditor/js/module.min.js"></script>
+<script src="~/js/simditor/js/hotkeys.min.js"></script>
+<script src="~/js/simditor/js/simditor.min.js"></script>
+<script src="~/assets/js/jquery.min.js"></script>
+<style>
+    .mail-header {
+        background-color: #fff;
+        border-bottom: 1px solid #ddd;
+        font-size: 20px;
+        height: 60px;
+        line-height: 60px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .mail-body {
+        padding: 20px;
+    }
+
+    .mail-box {
+        border: 1px solid #ddd;
+    }
+
+    .form {
+        width: 50%;
+        margin: 0px;
+        padding: 0px;
+        border-collapse: collapse;
+        border-width: 3px 1px 1px;
+        table-layout: fixed;
+    }
+
+        .form .formTitle {
+            position: relative;
+            left: 0px;
+            text-align: right;
+            white-space: nowrap;
+            font-weight: normal;
+            width: 90px;
+            padding-right: 15px;
+        }
+
+        .form .formValue {
+            position: relative;
+            padding: 5px;
+            width: auto;
+        }
+
+    .simditor {
+        border-left: none;
+        border-right: none;
+        border-top: none;
+    }
+
+    .has-error .form-control {
+        border: 1px solid #a4cbff;
+    }
+</style>
+<script>
+    var editor;
+    $(function () {
+        editor = new Simditor({
+            textarea: $('#content'),
+            toolbar: ['title', 'bold', 'italic', 'underline', 'strikethrough', 'color', '|', 'ol', 'ul', 'blockquote', 'code', 'table', '|', 'link', 'image', 'hr', '|', 'indent', 'outdent']
+        });
+    });
+ function submitForm()
+    {
+        var content = $("#content").val();
+        var account = $("#account").val();
+        var title = $("#title").val();
+     var newstype = $("#newType").val();
+     if (content == "" || content == null) {
+         alert("内容必填！");
+     }
+     if (account == "" || account == null) {
+         alert("发布人必填！");
+     }
+     if (title == "" || title == null) {
+         alert("主题必填！");
+     }
+     if (newstype == "" || newstype == null) {
+         alert("类型必填！");
+     }
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("PublishNews", "Publish")',
+            data: { account: account, title: title, content: content, newstype: newstype},
+            success: function (data) {
+                alert("发布成功！");
+            }, error: function (req, status, error) {
+                alert("发布失败！");
+            }
+        });
+
+
+    }
+    function AddFriendlink()
+    {
+        var friendlylink = $("#friendlylink").val();
+        var friendlyName = $("#friendlyName").val();
+        var friendlyUse = $("#friendlyUse").val();
+        $.ajax({
+            type: "POST",
+            url: '@Url.Action("PublishFriendlylink", "Publish")',
+            data: { friendlylink: friendlylink, friendlyName: friendlyName, friendlyUse: friendlyUse},
+            success: function (data) {
+                alert("发布成功！");
+            }, error: function (req, status, error) {
+                alert("发布失败！");
+            }
+        });
+    }
+</script>
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td align="center">
+            <table width="1001" border="0" cellspacing="0" cellpadding="0" style="margin-top:200px">
+                <tr>
+                    <td align="center">
+                        <form id="form1">
+                            <div class="mail-box">
+                                <div class="mail-header">新闻发布</div>
+                                <div class="mail-body">
+                                    <table class="form">
+                                        <tr>
+                                            <th class="formTitle">发布人</th>
+                                            <td class="formValue">
+                                                <input id="account" name="account" type="text" class="form-control required" placeholder="输入多个邮件地址请用英文符号;隔开" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="formTitle">主题</th>
+                                            <td class="formValue">
+                                                <input id="title" name="title" type="text" class="form-control required" />
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th class="formTitle">类型</th>
+                                            <td class="formValue">
+                                                <select id="newType">
+
+                                                    <option value="最新资讯">最新资讯</option>
+                                                    <option value="成功案例">成功案例</option>
+                                                    <option value="投票小常识">投票小常识</option>
+                                                    <option value="常见问题">常见问题</option>
+                                                </select>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div class="mail-body" style="padding: 0px;">
+                                    <textarea id="content" name="content" class="form-control" rows="5"></textarea>
+                                </div>
+                                <div class="mail-body" style="text-align:center;">
+                                    <a href="javascript:void()" onclick="submitForm()" class="btn btn-primary" style="margin-right: 5px;"><i class="fa fa-reply"></i>发布</a>
+                                    @*<a href="javascript:void()" class="btn btn-warning"><i class="fa fa-pencil"></i>存为草稿</a>*@
+                                </div>
+                            </div>
+                        </form>
+                        <fieldset style="width:auto;line-height:15px;height:70px;overflow:auto;padding:20px" id="dvTableContainer">
+
+                            <table>
+                                <tr>
+                                    <td class="formValue" colspan="3">
+                                        地址：<input id="friendlylink" type="text" /> 名称：<input id="friendlyName" type="text" /> 用户名 <input id="friendlyUse" type="text" />
+                                        <input type="button" onclick="AddFriendlink()" value="新增友连接" />
+                                    </td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    </td>
+                </tr>
+            </table>
+
+          
+        </td>
+    </tr>
+</table>
+
+
+
+
+

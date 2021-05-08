@@ -1,60 +1,7 @@
 ﻿@{
-    ViewBag.Title = "投票";
+    ViewBag.Title = "投票,微信投票,点赞,微信刷票";
 }
-
-<script type="text/javascript">
-    function setTab(id) {
-        document.getElementById("tab1").style.background = 'url(../images/cfinal_42.jpg) no-repeat';
-        document.getElementById("tab2").style.background = 'url(../images/cfinal_42.jpg) no-repeat';
-        document.getElementById("tab3").style.background = 'url(../images/cfinal_42.jpg) no-repeat';
-
-
-        document.getElementById("tabp1").style.display = 'none';
-        document.getElementById("tabp2").style.display = 'none';
-        document.getElementById("tabp3").style.display = 'none';
-
-
-        if (id == 1) {
-            document.getElementById("tab1").style.background = 'url(../images/cfinal_42-.jpg) no-repeat';
-            document.getElementById("tabp1").style.display = '';
-        }
-        if (id == 2) {
-            document.getElementById("tab2").style.background = 'url(../images/cfinal_42-.jpg) no-repeat';
-            document.getElementById("tabp2").style.display = '';
-        }
-        if (id == 3) {
-            document.getElementById("tab3").style.background = 'url(../images/cfinal_42-.jpg) no-repeat';
-            document.getElementById("tabp3").style.display = '';
-        }
-
-    }
-
-    function setTab2(id) {
-        document.getElementById("tab4").style.background = 'url(../images/cfinal_420.jpg) no-repeat';
-        document.getElementById("tab5").style.background = 'url(../images/cfinal_420.jpg) no-repeat';
-
-
-        document.getElementById("tabp4").style.display = 'none';
-        document.getElementById("tabp5").style.display = 'none';
-
-
-        if (id == 4) {
-            document.getElementById("tab4").style.background = 'url(../images/cfinal_42-0.jpg) no-repeat';
-            document.getElementById("tabp4").style.display = '';
-        }
-        if (id == 5) {
-            document.getElementById("tab5").style.background = 'url(../images/cfinal_42-0.jpg) no-repeat';
-            document.getElementById("tabp5").style.display = '';
-        }
-
-
-    }
-    function MM_jumpMenu(targ, selObj, restore) { //v3.0
-        eval(targ + ".location='" + selObj.options[selObj.selectedIndex].value + "'");
-        if (restore) selObj.selectedIndex = 0;
-    }
-</script>
-
+<script src="~/assets/js/jquery.min.js"></script>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
 
@@ -71,13 +18,13 @@
                                 <ul>
 
 
-                                    <li><img alt="刷票公司" src="../images/cfb5e88550cc95d7172b5b558c642bde.jpg" /></li>
+                                    <li><img alt="微信投票" src="../images/banner01.jpg" /></li>
 
-                                    <li><img alt="刷票公司" src="../images/745f126e70b741de809426fc854b69b2.jpg" /></li>
+                                    <li><img alt="微信投票" src="../images/banner02.jpg" /></li>
 
-                                    <li><img alt="刷票公司" src="../images/ba3688bb0a3b93cbe2ba604b4a198fdb.jpg" /></li>
+                                    <li><img alt="微信投票" src="../images/banner03.jpg" /></li>
 
-                                    <li><img alt="刷票公司" src="../images/6e2fdb0c7f9e9965b87c0b0f42097b4e.jpg" /></li>
+                                    <li><img alt="微信投票" src="../images/banner04.jpg" /></li>
 
                                 </ul>
                                 <div style="clearfix"></div>
@@ -104,7 +51,7 @@
                             </tr>
 
                             <tr>
-                                <td height="36" background="../images/h_r17_c20.jpg">
+                                <td height="36" background="../images/p1.jpg">
                                     <table width="264" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                             <td height="5" colspan="2"></td>
@@ -118,7 +65,7 @@
                             </tr>
 
                             <tr>
-                                <td height="278" valign="top" background="../images/h_r20_c20.jpg">
+                                <td height="278" valign="top" background="../images/p2.jpg">
                                     <table width="264" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
                                             <td height="5" colspan="3"></td>
@@ -126,156 +73,37 @@
                                         <tr>
                                             <td width="11">&nbsp;</td>
                                             <td width="253">
-                                                <!----------------新闻开始------------------------->
+                                                <!----------------最新资讯------------------------->
 
                                                 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                                    <tr>
-                                                        <td height="25" width="100%">
-                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                <tr>
-                                                                    <td width="3%" height="25"><img src="../images/ni.jpg" width="13" height="12" /></td>
-                                                                    <td align="left">
-                                                                       <a href="@Url.Action("GetNewsInfo",new { id = 10})">微信投票团队帮你解决活动票</a>
-                                                        
-                                                                        @*<a href="../news/145.html"></a>*@
-                                                                    </td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
+                                                    @foreach (var item in ViewBag.zxzx as List<Model.News>)
+                                                    {
 
-                                                    <tr>
-                                                        <td height="1" background="../images/line.jpg"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="25" width="100%">
-                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                <tr>
-                                                                    <td width="3%" height="25"><img src="../images/ni.jpg" width="13" height="12" /></td>
-                                                                    <td align="left"><a href="../news/143.html">微信刷投票平台<font color="#CCCCCC">...</font></a></td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
+                                                        if (item.Type != "最新资讯")
+                                                        {
+                                                            continue;
+                                                        }
+                                                        <tr>
+                                                            <td height="25" width="100%">
+                                                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                    <tr>
+                                                                        <td width="3%" height="25"><img src="../images/ni.jpg" width="13" height="12" /></td>
+                                                                        <td align="left">
+                                                                            <a href="@Url.Action("GetNewsInfo",new { id = item.Id})">@item.Title</a>
+                                                                        </td>
+                                                                    </tr>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
 
-                                                    <tr>
-                                                        <td height="1" background="../images/line.jpg"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="25" width="100%">
-                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                <tr>
-                                                                    <td width="3%" height="25"><img src="../images/ni.jpg" width="13" height="12" /></td>
-                                                                    <td align="left"><a href="../news/140.html">投票赢家都是采用刷票的方法<font color="#CCCCCC">...</font></a></td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
+                                                        <tr>
+                                                            <td height="1" background="../images/line.jpg"></td>
+                                                        </tr>
+                                                    }
 
-                                                    <tr>
-                                                        <td height="1" background="../images/line.jpg"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="25" width="100%">
-                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                <tr>
-                                                                    <td width="3%" height="25"><img src="../images/ni.jpg" width="13" height="12" /></td>
-                                                                    <td align="left"><a href="../news/136.html">微信投票活动您不知道的小技<font color="#CCCCCC">...</font></a></td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td height="1" background="../images/line.jpg"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="25" width="100%">
-                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                <tr>
-                                                                    <td width="3%" height="25"><img src="../images/ni.jpg" width="13" height="12" /></td>
-                                                                    <td align="left"><a href="../news/134.html">微信投票怎么增长粉丝呢？<font color="#CCCCCC">...</font></a></td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td height="1" background="../images/line.jpg"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="25" width="100%">
-                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                <tr>
-                                                                    <td width="3%" height="25"><img src="../images/ni.jpg" width="13" height="12" /></td>
-                                                                    <td align="left"><a href="../news/132.html">怎么让微信投票参加者的人气<font color="#CCCCCC">...</font></a></td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td height="1" background="../images/line.jpg"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="25" width="100%">
-                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                <tr>
-                                                                    <td width="3%" height="25"><img src="../images/ni.jpg" width="13" height="12" /></td>
-                                                                    <td align="left"><a href="../news/130.html">使用微信投票神器怎么操作呢<font color="#CCCCCC">...</font></a></td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td height="1" background="../images/line.jpg"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="25" width="100%">
-                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                <tr>
-                                                                    <td width="3%" height="25"><img src="../images/ni.jpg" width="13" height="12" /></td>
-                                                                    <td align="left"><a href="../news/128.html">怎么查别人是不是刷票呢？<font color="#CCCCCC">...</font></a></td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td height="1" background="../images/line.jpg"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="25" width="100%">
-                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                <tr>
-                                                                    <td width="3%" height="25"><img src="../images/ni.jpg" width="13" height="12" /></td>
-                                                                    <td align="left"><a href="../news/126.html">网络刷票公司投票方式有哪些<font color="#CCCCCC">...</font></a></td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td height="1" background="../images/line.jpg"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td height="25" width="100%">
-                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                <tr>
-                                                                    <td width="3%" height="25"><img src="../images/ni.jpg" width="13" height="12" /></td>
-                                                                    <td align="left"><a href="../news/124.html">怎么分辨微信投票骗局呢？<font color="#CCCCCC">...</font></a></td>
-                                                                </tr>
-                                                            </table>
-                                                        </td>
-                                                    </tr>
-
-                                                    <tr>
-                                                        <td height="1" background="../images/line.jpg"></td>
-                                                    </tr>
                                                     <tr></tr>
                                                 </table>
-                                                <!----------------新闻结束------------------------->
+                                                <!----------------最新资讯结束------------------------->
 
                                             </td>
                                             <td width="9">&nbsp;</td>
@@ -288,11 +116,11 @@
                                 <td height="11"></td>
                             </tr>
                             <tr>
-                                <td><a href="../news/"><img src="../images/h_r28_c2.jpg" alt="投票信息" width="264" height="63" border="0"></a></td>
+                                <td><a href="#"><img src="../images/p3.jpg" alt="投票信息" width="264" height="63" border="0"></a></td>
                             </tr>
                             <tr><td height="9"></td></tr>
                             <tr>
-                                <td><a href="/download"><img src="../images/h_r32_c2.jpg" alt="下载中心" width="264" height="64" border="0"></a></td>
+                                <td><a href="#"><img src="../images/p4.jpg" alt="下载中心" width="264" height="64" border="0"></a></td>
                             </tr>
 
                             <td width="264" valign="top">
@@ -321,7 +149,7 @@
                                     <tr><td height="10"></td></tr>
 
                                     <tr>
-                                        <td height="34" background="../images/h_r22_c110.jpg">
+                                        <td height="34" background="../images/p7.jpg">
                                             <table width="264" border="0" cellspacing="0" cellpadding="0">
                                                 <tr>
                                                     <td height="3" colspan="2"></td>
@@ -335,11 +163,11 @@
                                     </tr>
 
                                     <tr>
-                                        <td><img src="../images/h_r24_c11.jpg" width="264" height="14"></td>
+                                        <td><img src="../images/p12.jpg" width="264" height="14"></td>
                                     </tr>
 
                                     <tr>
-                                        <td><a href="../news/liuyan.html"><img src="../images/h_r26_c11.jpg" alt="网上留言" width="264" height="63" border="0"></a></td>
+                                        <td><a href="#"><img src="../images/p7.jpg" alt="网上留言" width="264" height="63" border="0"></a></td>
                                     </tr>
 
 
@@ -378,7 +206,7 @@
                                                                 <tr>
                                                                     <td width="23">&nbsp;</td>
                                                                     <td width="664" align="left" style="font-size:14px; font-weight:bold;">&nbsp;公司简介</td>
-                                                                    <td width="56"><a href="/about.html">More&gt;&gt;</a></td>
+                                                                    <td width="56"><a href="#">More&gt;&gt;</a></td>
                                                                 </tr>
                                                             </table>
                                                         </td>
@@ -408,27 +236,24 @@
 
                                                     <tr>
                                                         <td>
-                                                            <!--四 -->
+                                                        
                                                             <table width="743" border="0" cellspacing="0" cellpadding="0">
+
                                                                 <tr>
-                                                                    <td width="157" align="center" height="35" style="background:url(../images/cfinal_42-.jpg) no-repeat;cursor:pointer;" id="tab1">
-                                                                        <a href="/product" style="display:block;width:157px;" onmousemove="setTab(1);">
+                                                                    <td width="100" align="center" height="26" style="background: url(../images/sel.jpg) no-repeat; cursor: pointer;" id="tab1">
+                                                                        <a href="/news/gsdt" style="display:block;width:100px;" onmousemove="setTab(1);">
                                                                             <span class="STYLE13">投票服务项目</span>
                                                                         </a>
                                                                     </td>
-                                                                    <td width="157" align="center" height="35" style="background:url(../images/cfinal_42.jpg) no-repeat;cursor:pointer;" id="tab2">
-                                                                        <a href="/case" style="display:block;width:157px;" onmousemove="setTab(2);">
-                                                                            <span class="STYLE13"><span class="STYLE13">成功案例</span></span>
+                                                                    <td width="100" align="center" height="26" style="background: url(../images/nosel.jpg) no-repeat; cursor: pointer;" id="tab2">
+                                                                        <a href="/news/hydt" style="display:block;width:100px;" onmousemove="setTab(2);">
+                                                                            <span class="STYLE13">成功案例</span>
                                                                         </a>
                                                                     </td>
-                                                                    <td width="157" height="35" align="center" style="background:url(../images/cfinal_42.jpg) no-repeat;cursor:pointer;" id="tab3">
-                                                                        <a href="/news/tpcs/" style="display:block;width:157px;cursor:pointer;" onmousemove="setTab(3);">
-                                                                            <span class="STYLE13">投票常识</span>
-                                                                        </a>
-                                                                    </td>
+                                                                    <td width="271" height="26" align="center" background="../images/c.jpg">&nbsp;</td>
                                                                 </tr>
                                                             </table>
-                                                            <!--四结束 -->
+                                                          
                                                         </td>
                                                     </tr>
 
@@ -443,287 +268,85 @@
                                                                     <td width="743" align="left">
                                                                         <div id=tabp1 style="padding-top:5px; padding-left:10px;">
 
-                                                                            <script>
-                                                                                    //设定图片显示尺寸
-                                                                                    var flag = false;
-                                                                                    function DrawImage(ImgD, w, h) {
-                                                                                        var image = new Image();
-                                                                                        image.src = ImgD.src;
-                                                                                        if (image.width > 0 && image.height > 0) {
-                                                                                            flag = true;
-                                                                                            if (image.width / image.height >= w / h) {
-                                                                                                if (image.width > w) {
-                                                                                                    ImgD.width = w;
-                                                                                                    ImgD.height = (image.height * w) / image.width;
-                                                                                                } else {
-                                                                                                    ImgD.width = image.width;
-                                                                                                    ImgD.height = image.height;
-                                                                                                }
-                                                                                            } else {
-                                                                                                if (image.height > h) {
-                                                                                                    ImgD.height = h;
-                                                                                                    ImgD.width = (image.width * h) / image.height;
-                                                                                                } else {
-                                                                                                    ImgD.width = image.width;
-                                                                                                    ImgD.height = image.height;
-                                                                                                }
-                                                                                            }
-                                                                                        }
-                                                                                    }
-
-                                                                            </script>
-                                                                            <style type="text/css">
-                                                                                <!--
-                                                                                .STYLE992 {
-                                                                                    font-weight: bold;
-                                                                                    color: #FF0000;
-                                                                                }
-                                                                                -->
-                                                                            </style>
 
 
+
+                                                                            <!----------------服务项目------------------------->
                                                                             <table width="101%" border="0" cellspacing="0" cellpadding="0">
                                                                                 <tr>
                                                                                     <td>
-                                                                                        <!----------------分页开始------------------------->
+
                                                                                         <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
                                                                                             <tr>
+                                                                                                @foreach (var item in ViewBag.fwxm as List<Model.News>)
+                                                                                                {
+                                                                                                    if (item.Type != "服务项目")
+                                                                                                    {
+                                                                                                        continue;
+                                                                                                    }
+                                                                                                    <td height="70" width="">
+                                                                                                        <table width="75" border="0" align="left" cellpadding="0" cellspacing="0">
+                                                                                                            <tr>
+                                                                                                                <td width="75" align="center">
+                                                                                                                    <table width="75" height="70" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e8e7e7">
+                                                                                                                        <tr>
+                                                                                                                            <td height="70" width="75" align="center" valign="middle">
+                                                                                                                                <a href="@Url.Action("GetServiceDetail",new { id = item.Id})">
+                                                                                                                                    <img src="@item.ImageUrl" alt="@item.Title" width="75" height="70" align="center">
+                                                                                                                                </a>
+                                                                                                                            </td>
+                                                                                                                        </tr>
+                                                                                                                    </table>
 
-                                                                                                <td height="70" width="">
-                                                                                                    <table width="75" border="0" align="left" cellpadding="0" cellspacing="0">
-                                                                                                        <tr>
-                                                                                                            <td width="75" align="center">
-                                                                                                                <table width="75" height="70" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e8e7e7">
-                                                                                                                    <tr>
-                                                                                                                        <td height="70" width="75" align="center" valign="middle">
-                                                                                                                            <a href="../news/77.html">
-                                                                                                                                <img src="../images/1a6120bc84557bb1b6d3d973d1d68353.jpg" alt="微信投票" width="75" height="70" align="center">
-                                                                                                                            </a>
-                                                                                                                        </td>
-                                                                                                                    </tr>
-                                                                                                                </table>
+                                                                                                                    <table width="75" border="0" cellspacing="0" cellpadding="0">
+                                                                                                                        <tr>
+                                                                                                                            <td width="75" height="5" style=" color:#999999; font-size:12px">@item.Title</td>
+                                                                                                                        </tr>
+                                                                                                                    </table>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </table>
+                                                                                                    </td>
+                                                                                                }
 
-                                                                                                                <table width="75" border="0" cellspacing="0" cellpadding="0">
-                                                                                                                    <tr>
-                                                                                                                        <td width="75" height="5" style=" color:#999999; font-size:12px">微信投票</td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                    </table>
-                                                                                                </td>
-                                                                                                <td height="70" width="">
-                                                                                                    <table width="75" border="0" align="left" cellpadding="0" cellspacing="0">
-                                                                                                        <tr>
-                                                                                                            <td width="75" align="center">
-                                                                                                                <table width="75" height="70" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e8e7e7">
-                                                                                                                    <tr>
-                                                                                                                        <td height="70" width="75" align="center" valign="middle">
-                                                                                                                            <a href="../news/76.html">
-                                                                                                                                <img src="../images/4f3e1e839f9286eef0f85376363ccf56.jpg" alt="微信点赞" width="75" height="70" align="center">
-                                                                                                                            </a>
-                                                                                                                        </td>
-                                                                                                                    </tr>
-                                                                                                                </table>
 
-                                                                                                                <table width="75" border="0" cellspacing="0" cellpadding="0">
-                                                                                                                    <tr>
-                                                                                                                        <td width="75" height="5" style=" color:#999999; font-size:12px">微信点赞</td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                    </table>
-                                                                                                </td>
-                                                                                                <td height="70" width="">
-                                                                                                    <table width="75" border="0" align="left" cellpadding="0" cellspacing="0">
-                                                                                                        <tr>
-                                                                                                            <td width="75" align="center">
-                                                                                                                <table width="75" height="70" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e8e7e7">
-                                                                                                                    <tr>
-                                                                                                                        <td height="70" width="75" align="center" valign="middle">
-                                                                                                                            <a href="../news/75.html">
-                                                                                                                                <img src="../images/510f6861fa9fd5e851fcca1cc3758d80.jpg" alt="文章阅读量" width="75" height="70" align="center">
-                                                                                                                            </a>
-                                                                                                                        </td>
-                                                                                                                    </tr>
-                                                                                                                </table>
 
-                                                                                                                <table width="75" border="0" cellspacing="0" cellpadding="0">
-                                                                                                                    <tr>
-                                                                                                                        <td width="75" height="5" style=" color:#999999; font-size:12px">文章阅读量</td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                    </table>
-                                                                                                </td>
-                                                                                                <td height="70" width="">
-                                                                                                    <table width="75" border="0" align="left" cellpadding="0" cellspacing="0">
-                                                                                                        <tr>
-                                                                                                            <td width="75" align="center">
-                                                                                                                <table width="75" height="70" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e8e7e7">
-                                                                                                                    <tr>
-                                                                                                                        <td height="70" width="75" align="center" valign="middle">
-                                                                                                                            <a href="../news/74.html">
-                                                                                                                                <img src="../images/eb55c33bee0e175b75cd4d1e99687116.jpg" alt="评论点赞" width="75" height="70" align="center">
-                                                                                                                            </a>
-                                                                                                                        </td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-
-                                                                                                                <table width="75" border="0" cellspacing="0" cellpadding="0">
-                                                                                                                    <tr>
-                                                                                                                        <td width="75" height="5" style=" color:#999999; font-size:12px">评论点赞</td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                    </table>
-                                                                                                </td>
-                                                                                                <td height="70" width="">
-                                                                                                    <table width="75" border="0" align="left" cellpadding="0" cellspacing="0">
-                                                                                                        <tr>
-                                                                                                            <td width="75" align="center">
-                                                                                                                <table width="75" height="70" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e8e7e7">
-                                                                                                                    <tr>
-                                                                                                                        <td height="70" width="75" align="center" valign="middle">
-                                                                                                                            <a href="../news/73.html">
-                                                                                                                                <img src="../images/cd7b0e7b9fdfd4c0cfa5d7f9afa3ebec.jpg" alt="注册" width="75" height="70" align="center">
-                                                                                                                            </a>
-                                                                                                                        </td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-
-                                                                                                                <table width="75" border="0" cellspacing="0" cellpadding="0">
-                                                                                                                    <tr>
-                                                                                                                        <td width="75" height="5" style=" color:#999999; font-size:12px">注册</td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                    </table>
-                                                                                                </td>
 
                                                                                             </tr>
                                                                                             <tr><td height="2"></td></tr>
                                                                                             <tr>
 
-                                                                                                <td height="70" width="">
-                                                                                                    <table width="75" border="0" align="left" cellpadding="0" cellspacing="0">
-                                                                                                        <tr>
-                                                                                                            <td width="75" align="center">
-                                                                                                                <table width="75" height="70" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e8e7e7">
-                                                                                                                    <tr>
-                                                                                                                        <td height="70" width="75" align="center" valign="middle">
-                                                                                                                            <a href="../news/72.html">
-                                                                                                                                <img src="../images/32a477452ecae64082149cc9459e9b81.jpg" alt="APP下载投票" width="75" height="70" align="center">
-                                                                                                                            </a>
-                                                                                                                        </td>
-                                                                                                                    </tr>
-                                                                                                                </table>
+                                                                                                @foreach (var item in ViewBag.fwxm1 as List<Model.News>)
+                                                                                                {
+                                                                                                    if (item.Type != "服务项目1")
+                                                                                                    {
+                                                                                                        continue;
+                                                                                                    }
+                                                                                                    <td height="70" width="">
+                                                                                                        <table width="75" border="0" align="left" cellpadding="0" cellspacing="0">
+                                                                                                            <tr>
+                                                                                                                <td width="75" align="center">
+                                                                                                                    <table width="75" height="70" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e8e7e7">
+                                                                                                                        <tr>
+                                                                                                                            <td height="70" width="75" align="center" valign="middle">
+                                                                                                                                <a href="@Url.Action("GetServiceDetail",new { id = item.Id})">
+                                                                                                                                    <img src="@item.ImageUrl" alt="@item.Title" width="75" height="70" align="center">
+                                                                                                                                </a>
+                                                                                                                            </td>
+                                                                                                                        </tr>
+                                                                                                                    </table>
 
-                                                                                                                <table width="75" border="0" cellspacing="0" cellpadding="0">
-                                                                                                                    <tr>
-                                                                                                                        <td width="75" height="5" style=" color:#999999; font-size:12px">APP下载投票</td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                    </table>
-                                                                                                </td>
-                                                                                                <td height="70" width="">
-                                                                                                    <table width="75" border="0" align="left" cellpadding="0" cellspacing="0">
-                                                                                                        <tr>
-                                                                                                            <td width="75" align="center">
-                                                                                                                <table width="75" height="70" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e8e7e7">
-                                                                                                                    <tr>
-                                                                                                                        <td height="70" width="75" align="center" valign="middle">
-                                                                                                                            <a href="../news/71.html">
-                                                                                                                                <img src="../images/cb34f76597ac7afeea9470d63fb11f16.jpg" alt="微博投票" width="75" height="70" align="center">
-                                                                                                                            </a>
-                                                                                                                        </td>
-                                                                                                                    </tr>
-                                                                                                                </table>
+                                                                                                                    <table width="75" border="0" cellspacing="0" cellpadding="0">
+                                                                                                                        <tr>
+                                                                                                                            <td width="75" height="5" style=" color:#999999; font-size:12px">@item.Title</td>
+                                                                                                                        </tr>
+                                                                                                                    </table>
+                                                                                                                </td>
+                                                                                                            </tr>
+                                                                                                        </table>
+                                                                                                    </td>
+                                                                                                }
 
-                                                                                                                <table width="75" border="0" cellspacing="0" cellpadding="0">
-                                                                                                                    <tr>
-                                                                                                                        <td width="75" height="5" style=" color:#999999; font-size:12px">微博投票</td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                    </table>
-                                                                                                </td>
-                                                                                                <td height="70" width="">
-                                                                                                    <table width="75" border="0" align="left" cellpadding="0" cellspacing="0">
-                                                                                                        <tr>
-                                                                                                            <td width="75" align="center">
-                                                                                                                <table width="75" height="70" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e8e7e7">
-                                                                                                                    <tr>
-                                                                                                                        <td height="70" width="75" align="center" valign="middle">
-                                                                                                                            <a href="../news/70.html">
-                                                                                                                                <img src="../images/b5a6f47cf1c255352166bad819d7ee0d.jpg" alt="抖音点赞" width="75" height="70" align="center">
-                                                                                                                            </a>
-                                                                                                                        </td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-
-                                                                                                                <table width="75" border="0" cellspacing="0" cellpadding="0">
-                                                                                                                    <tr>
-                                                                                                                        <td width="75" height="5" style=" color:#999999; font-size:12px">抖音点赞</td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                    </table>
-                                                                                                </td>
-                                                                                                <td height="70" width="">
-                                                                                                    <table width="75" border="0" align="left" cellpadding="0" cellspacing="0">
-                                                                                                        <tr>
-                                                                                                            <td width="75" align="center">
-                                                                                                                <table width="75" height="70" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e8e7e7">
-                                                                                                                    <tr>
-                                                                                                                        <td height="70" width="75" align="center" valign="middle">
-                                                                                                                            <a href="../news/69.html">
-                                                                                                                                <img src="../images/fb5846ae14096cf7fd3de1cf26e9351c.jpg" alt="抖音加粉" width="75" height="70" align="center">
-                                                                                                                            </a>
-                                                                                                                        </td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-
-                                                                                                                <table width="75" border="0" cellspacing="0" cellpadding="0">
-                                                                                                                    <tr>
-                                                                                                                        <td width="75" height="5" style=" color:#999999; font-size:12px">抖音加粉</td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                    </table>
-                                                                                                </td>
-                                                                                                <td height="70" width="">
-                                                                                                    <table width="75" border="0" align="left" cellpadding="0" cellspacing="0">
-                                                                                                        <tr>
-                                                                                                            <td width="75" align="center">
-                                                                                                                <table width="75" height="70" cellpadding="0" cellspacing="0" border="0" style="border:1px solid #e8e7e7">
-                                                                                                                    <tr>
-                                                                                                                        <td height="70" width="75" align="center" valign="middle">
-                                                                                                                            <a href="../news/68.html">
-                                                                                                                                <img src="../images/74312fd44551cb1ffcb200bd44b69fed.jpg" alt="小程序投票" width="75" height="70" align="center">
-                                                                                                                            </a>
-                                                                                                                        </td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-
-                                                                                                                <table width="75" border="0" cellspacing="0" cellpadding="0">
-                                                                                                                    <tr>
-                                                                                                                        <td width="75" height="5" style=" color:#999999; font-size:12px">小程序投票</td>
-                                                                                                                    </tr>
-                                                                                                                </table>
-                                                                                                            </td>
-                                                                                                        </tr>
-                                                                                                    </table>
-                                                                                                </td>
 
                                                                                             </tr>
 
@@ -732,186 +355,50 @@
                                                                                             <tr></tr>
 
                                                                                         </table>
-                                                                                        <!--------------结束--------------------------->
+
                                                                                     </td>
                                                                                 </tr>
                                                                             </table>
-
+                                                                            <!--------------服务项目结束--------------------------->
                                                                         </div>
 
+                                                                        <!----------------成功案例------------------------->
                                                                         <div id=tabp2 style="display:none;padding-top:0px;">
 
-                                                                            <!----------------新闻开始------------------------->
+
 
                                                                             <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/66.html">声讯投票</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2018-12-06</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/67.html">软件定制</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2018-12-06</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/64.html">网络刷票</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2018-12-06</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/65.html">短信刷票</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2018-12-06</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/62.html">“网络人气歌手奖”幼儿A组投票开始啦！找有味微信投票公司</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2018-12-06</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/63.html">微信投票</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2018-12-06</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/60.html">四川省十佳刑警宣传展示活动邀您投票—新华网</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2018-12-06</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/61.html">寻找哈尔滨市民和企业最满意的银行网点-有味代理投票公司</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2018-12-06</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr></tr>
-                                                                            </table>
-                                                                            <!----------------新闻结束------------------------->
-                                                                        </div>
+                                                                                @foreach (var item in ViewBag.cgal as List<Model.News>)
+                                                                                {
+                                                                                    if (item.Type != "成功案例")
+                                                                                    {
+                                                                                        continue;
+                                                                                    }
+                                                                                    <tr>
+                                                                                        <td height="26" width="100%">
+                                                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                                                <tr>
+                                                                                                    <td width="3%" height="26"><img src="@item.ImageUrl" width="16" height="9" /></td>
+                                                                                                    <td width="77%"><a href="@Url.Action("GetNewsInfo",new { id = item.Id})">@item.Title</a></td>
+                                                                                                    <td width="20%" align="right"><font color="#666666">@item.PublishedTime.Value.ToString("yyyy-MM-dd")</font></td>
+                                                                                                </tr>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td height="1" background="../images/line.jpg"></td>
+                                                                                    </tr>
+                                                                                }
 
-                                                                        <div id=tabp3 style="display:none;padding-top:0px;">
-                                                                            <!----------------新闻开始------------------------->
-                                                                            <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/59.html">本网站自动刷票软件的特点</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2018-12-06</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/57.html">系统是如何进行投票操作的</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2018-12-06</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/58.html">为什么我的投票程序开启了但是不见我的投票数增长</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2018-12-06</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
+
 
                                                                                 <tr></tr>
                                                                             </table>
-                                                                            <!----------------新闻结束------------------------->
+
                                                                         </div>
+                                                                        <!----------------成功案例结束------------------------->
+
                                                                     </td>
                                                                     <td width="7"></td>
                                                                 </tr>
@@ -929,14 +416,14 @@
                                                         <td>
                                                             <table width="743" border="0" cellspacing="0" cellpadding="0">
                                                                 <tr>
-                                                                    <td width="100" align="center" height="26" style="background: url(../images/cfinal_42-0.jpg) no-repeat; cursor: pointer;" id="tab4">
-                                                                        <a href="/news/gsdt" style="display:block;width:100px;" onmousemove="setTab2(4);">
-                                                                            <span class="STYLE13">公司动态</span>
+                                                                    <td width="100" align="center" height="26" style="background: url(../images/sel.jpg) no-repeat; cursor: pointer;" id="tab4">
+                                                                        <a href="/news/gsdt" style="display:block;width:100px;" onmousemove="setTab(4);">
+                                                                            <span class="STYLE13">投票小常识</span>
                                                                         </a>
                                                                     </td>
-                                                                    <td width="100" align="center" height="26" style="background: url(../images/cfinal_420.jpg) no-repeat; cursor: pointer;" id="tab5">
-                                                                        <a href="/news/hydt" style="display:block;width:100px;" onmousemove="setTab2(5);">
-                                                                            <span class="STYLE13">行业动态</span>
+                                                                    <td width="100" align="center" height="26" style="background: url(../images/nosel.jpg) no-repeat; cursor: pointer;" id="tab5">
+                                                                        <a href="/news/hydt" style="display:block;width:100px;" onmousemove="setTab(5);">
+                                                                            <span class="STYLE13">常见问题</span>
                                                                         </a>
                                                                     </td>
                                                                     <td width="271" height="26" align="center" background="../images/c.jpg">&nbsp;</td>
@@ -958,362 +445,69 @@
 
 
 
-                                                                            <!----------------新闻开始------------------------->
+                                                                            <!----------------投票小常识------------------------->
 
                                                                             <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/315.html">如何更好的保护微信投票的隐私呢</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-06-17</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/313.html">网络刷票细节介绍</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-06-10</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/311.html">拉票常见手段介绍</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-06-02</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/309.html">微信投票软件如何操作更加安全</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-05-26</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/307.html">刷票公司需要具备素质</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-05-20</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/305.html">微信投手相关知识介绍</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-05-15</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/303.html">刷票过程中需要避开的弱项</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-05-12</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/301.html">投票过程中的安全问题</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-05-07</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/299.html">微信刷票软件如何操作才安全呢？</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-04-28</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/297.html">投票过程中必须保证的几个要素</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-04-24</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/295.html">微信刷票过程中需要注意的细节</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-04-21</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/293.html">网络投票公司应该如何选择呢？</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-04-16</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr></tr>
+                                                                                @foreach (var item in ViewBag.tpcs as List<Model.News>)
+                                                                                {
+                                                                                    if (item.Type != "投票小常识")
+                                                                                    {
+                                                                                        continue;
+                                                                                    }
+                                                                                    <tr>
+                                                                                        <td height="26" width="100%">
+                                                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                                                <tr>
+                                                                                                    <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
+                                                                                                    <td width="77%"><a href="@Url.Action("GetNewsInfo",new { id = item.Id})">@item.Title</a></td>
+                                                                                                    <td width="20%" align="right"><font color="#666666">@item.PublishedTime.Value.ToString("yyyy-MM-dd")</font></td>
+                                                                                                </tr>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td height="1" background="../images/line.jpg"></td>
+                                                                                    </tr>
+                                                                                }
+
+
                                                                             </table>
 
-                                                                            <!----------------新闻结束------------------------->
+                                                                            <!----------------投票小常识结束------------------------->
                                                                         </div>
 
 
                                                                         <div id="tabp5" style="display:none;padding-top:0px;">
 
-                                                                            <!----------------新闻开始------------------------->
+                                                                            <!----------------常见问题开始------------------------->
 
                                                                             <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/316.html">独享IP和共享IP之间的不同</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-06-19</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/314.html">微信刷票的过程中需要了解的细节</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-06-12</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/312.html">刷票公司需要具备实力</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-06-09</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/310.html">微信拉票过程中需要掌握的技巧</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-05-27</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/308.html">微信公众号刷粉相关细节介绍</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-05-22</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/306.html">手机多次投票的方法</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-05-19</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/304.html">投票需要的基本要求</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-05-13</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/302.html">微信刷票的目的所在</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-05-10</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/300.html">如何跟好的提升排名</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-04-30</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/298.html">寻找网络刷票过程中需要注意什么呢？</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-04-27</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/296.html">微信刷票计票形式</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-04-22</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="26" width="100%">
-                                                                                        <table width="100%" border="0" cellspacing="0" cellpadding="0">
-                                                                                            <tr>
-                                                                                                <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
-                                                                                                <td width="77%"><a href="../news/294.html">网络投票安全方面知识介绍</a></td>
-                                                                                                <td width="20%" align="right"><font color="#666666">2020-04-17</font></td>
-                                                                                            </tr>
-                                                                                        </table>
-                                                                                    </td>
-                                                                                </tr>
-                                                                                <tr>
-                                                                                    <td height="1" background="../images/line.jpg"></td>
-                                                                                </tr>
+                                                                                @foreach (var item in ViewBag.cjwt as List<Model.News>)
+                                                                                {
+                                                                                    if (item.Type != "常见问题")
+                                                                                    {
+                                                                                        continue;
+                                                                                    }
+                                                                                    <tr>
+                                                                                        <td height="26" width="100%">
+                                                                                            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                                                                                <tr>
+                                                                                                    <td width="3%" height="26"><img src="../images/jt.jpg" width="16" height="9" /></td>
+                                                                                                    <td width="77%"><a href="@Url.Action("GetNewsInfo",new { id = item.Id})">@item.Title</a></td>
+                                                                                                    <td width="20%" align="right"><font color="#666666">@item.PublishedTime.Value.ToString("yyyy-MM-dd")</font></td>
+                                                                                                </tr>
+                                                                                            </table>
+                                                                                        </td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <td height="1" background="../images/line.jpg"></td>
+                                                                                    </tr>
+                                                                                }
 
-                                                                                <tr></tr>
+
                                                                             </table>
 
-                                                                            <!----------------新闻结束------------------------->
+                                                                            <!----------------常见问题结束------------------------->
 
 
                                                                         </div>
@@ -1348,30 +542,14 @@
         </td>
     </tr>
     <tr>
-        <td>
-          
-
-        </td>
+        <td></td>
     </tr>
 </table>
 
 
 
 
-<script>
-    (function () {
-        var bp = document.createElement('script');
-        var curProtocol = window.location.protocol.split(':')[0];
-        if (curProtocol === 'https') {
-            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
-        }
-        else {
-            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
-        }
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(bp, s);
-    })();
-</script>
+
 
 <script>
     var i = 0
@@ -1385,4 +563,32 @@
         }
         $(".ul").animate({ "left": -$(".ul li")[0].offsetWidth * i })
     }, 3000)
+
+    function setTab(id) {
+        var selectTab = "tab" + id;
+        var selecttabp = "tabp" + id;
+        if (id > 3) {
+
+            $("#tab4").css("background", "url(../images/nosel.jpg) no-repeat");
+            $("#tab5").css("background", "url(../images/nosel.jpg) no-repeat");
+            $("#tabp4").css("display", "none");
+            $("#tabp5").css("display", "none");
+            $("#" + selectTab).css("background", "url(../images/sel.jpg) no-repeat");
+            $("#" + selecttabp).css("display", "");
+
+
+
+        } else {
+            $("#tab1").css("background", "url(../images/nosel.jpg) no-repeat");
+            $("#tab2").css("background", "url(../images/nosel.jpg) no-repeat");
+            $("#tabp1").css("display", "none");
+            $("#tabp2").css("display", "none");
+            $("#" + selectTab).css("background", "url(../images/sel.jpg) no-repeat");
+            $("#" + selecttabp).css("display", "");
+        }
+
+
+    }
+    
 </script>
+

@@ -1,17 +1,15 @@
 using System;
 using System.Collections.Generic;
-using System.Text;
 using System.Xml;
-using System.Web;
-using System.Web.Caching;
 using System.Xml.Serialization;
+using Microsoft.Extensions.Caching.Memory;
 
 namespace Workflows
 {
-	/// <summary>
-	/// 基于XML的工作流定义持久化服务
-	/// </summary>
-	public class XmlWorkFlowDefinePersistService : IWorkFlowDefinePersistService
+    /// <summary>
+    /// 基于XML的工作流定义持久化服务
+    /// </summary>
+    public class XmlWorkFlowDefinePersistService : IWorkFlowDefinePersistService
 	{
 		/// <summary>
 		/// xml文件物理目录
@@ -19,11 +17,13 @@ namespace Workflows
 		private string xmlFilesPath;
 
 		private const string cacheNamePre="wf_";
-
-		/// <summary>
-		/// Initializes a new instance of the <see cref="XmlWorkFlowDefinePersistService"/> class.
-		/// </summary>
-		public XmlWorkFlowDefinePersistService() { }
+        private IMemoryCache _memoryCache;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="XmlWorkFlowDefinePersistService"/> class.
+        /// </summary>
+        public XmlWorkFlowDefinePersistService(IMemoryCache memoryCache) {
+            _memoryCache = memoryCache;
+        }
 		/// <summary>
 		/// 构造一个读取xml定义的工作流定义的服务
 		/// </summary>
@@ -60,51 +60,78 @@ namespace Workflows
 		/// <returns></returns>
 		public WorkFlowDefine GetWorkflowDefine(string workflowName)
 		{
-			if (HttpContext.Current == null) //非http应用,无法从缓存中获取,只能读取.
-			{
-				//List<WorkflowDefineConfig> defines = new List<WorkflowDefineConfig>();
-				WorkflowConfig config = GetConfig();
-				foreach (WorkflowApplication app in config.Applications)
-				{
-					for (int i = 0; i < app.Defines.Count; i++)
-					{
-						if (app.Defines[i].Name.Equals(workflowName, StringComparison.OrdinalIgnoreCase))
-						{
-							string fullFileName = GetFileName(app.Defines[i].File);
-							return ReadFromFile(app, fullFileName);
-						}
-					}
-				}
-				throw new ArgumentException(string.Format("workflowName '{0}' must in config", workflowName));
-			}
+            string cacheName = GetCacheName(workflowName);
+            WorkFlowDefine wf = null;
+            _memoryCache.TryGetValue<WorkFlowDefine>(cacheName, out wf);
+            if(wf == null)
+            {
+                WorkflowConfig config = GetConfig();
+                bool found = false;
+                foreach (WorkflowApplication app in config.Applications)
+                {
+                    for (int i = 0; i < app.Defines.Count; i++)
+                    {
+                        if (app.Defines[i].Name.Equals(workflowName, StringComparison.OrdinalIgnoreCase))
+                        {
+                            string fullFileName = GetFileName(app.Defines[i].File);
+                            //CacheDependency fileDependency = new System.Web.Caching.CacheDependency(fullFileName);
+                            // HttpContext.Current.Cache.Add(cacheName, ReadFromFile(app, fullFileName), fileDependency, DateTime.MaxValue, System.Web.Caching.Cache.NoSlidingExpiration, CacheItemPriority.High, null);
+                            wf = ReadFromFile(app, fullFileName);
+                            _memoryCache.Set<WorkFlowDefine>(cacheName, wf);
+                            found = true;
+                            break;
+                        }
+                    }
+                }
+                if (!found)
+                    throw new ArgumentException(string.Format("workflowName '{0}' must in config", workflowName));
+            }
+            return wf;
+   //         if (HttpContext.Current == null) //非http应用,无法从缓存中获取,只能读取.
+			//{
+			//	//List<WorkflowDefineConfig> defines = new List<WorkflowDefineConfig>();
+			//	WorkflowConfig config = GetConfig();
+			//	foreach (WorkflowApplication app in config.Applications)
+			//	{
+			//		for (int i = 0; i < app.Defines.Count; i++)
+			//		{
+			//			if (app.Defines[i].Name.Equals(workflowName, StringComparison.OrdinalIgnoreCase))
+			//			{
+			//				string fullFileName = GetFileName(app.Defines[i].File);
+			//				return ReadFromFile(app, fullFileName);
+			//			}
+			//		}
+			//	}
+			//	throw new ArgumentException(string.Format("workflowName '{0}' must in config", workflowName));
+			//}
 
 
-			//有缓冲对象,则从缓存对象中获取
-			//获取缓存名字
-			string cacheName = GetCacheName(workflowName);
-			//从缓存中读取
-			if (HttpContext.Current.Cache[cacheName] == null)
-			{
-				WorkflowConfig config = GetConfig();
-				bool found = false;
-				foreach (WorkflowApplication app in config.Applications)
-				{
-					for (int i = 0; i < app.Defines.Count; i++)
-					{
-						if (app.Defines[i].Name.Equals(workflowName, StringComparison.OrdinalIgnoreCase))
-						{
-							string fullFileName = GetFileName(app.Defines[i].File);
-							CacheDependency fileDependency = new System.Web.Caching.CacheDependency(fullFileName);
-							HttpContext.Current.Cache.Add(cacheName, ReadFromFile(app,fullFileName), fileDependency, DateTime.MaxValue, System.Web.Caching.Cache.NoSlidingExpiration, CacheItemPriority.High, null);
-							found = true;
-							break;
-						}
-					}
-				}
-				if(!found)
-					throw new ArgumentException(string.Format("workflowName '{0}' must in config", workflowName));
-			}
-			return (WorkFlowDefine)HttpContext.Current.Cache[cacheName];
+			////有缓冲对象,则从缓存对象中获取
+			////获取缓存名字
+			//string cacheName = GetCacheName(workflowName);
+			////从缓存中读取
+			//if (HttpContext.Current.Cache[cacheName] == null)
+			//{
+			//	WorkflowConfig config = GetConfig();
+			//	bool found = false;
+			//	foreach (WorkflowApplication app in config.Applications)
+			//	{
+			//		for (int i = 0; i < app.Defines.Count; i++)
+			//		{
+			//			if (app.Defines[i].Name.Equals(workflowName, StringComparison.OrdinalIgnoreCase))
+			//			{
+			//				string fullFileName = GetFileName(app.Defines[i].File);
+			//				CacheDependency fileDependency = new System.Web.Caching.CacheDependency(fullFileName);
+			//				HttpContext.Current.Cache.Add(cacheName, ReadFromFile(app,fullFileName), fileDependency, DateTime.MaxValue, System.Web.Caching.Cache.NoSlidingExpiration, CacheItemPriority.High, null);
+			//				found = true;
+			//				break;
+			//			}
+			//		}
+			//	}
+			//	if(!found)
+			//		throw new ArgumentException(string.Format("workflowName '{0}' must in config", workflowName));
+			//}
+			//return (WorkFlowDefine)HttpContext.Current.Cache[cacheName];
 		}
 
 		private string GetCacheName(string name)
@@ -189,20 +216,29 @@ namespace Workflows
 		public WorkflowConfig GetConfig()
 		{
 			string cacheName="workflowconfig";
-			if (HttpContext.Current == null)
-			{
-				string fileName = GetFileName("workflowconfig.xml");
-				WorkflowConfig config = ReadConfig(fileName);
-				return config;
-			}
-			if (HttpContext.Current.Cache[cacheName] == null)
-			{
-				string fileName = GetFileName("workflowconfig.xml");
-				WorkflowConfig config = ReadConfig(fileName);
-				CacheDependency fileDependency = new System.Web.Caching.CacheDependency(fileName);
-				HttpContext.Current.Cache.Add(cacheName, config, fileDependency, DateTime.MaxValue, System.Web.Caching.Cache.NoSlidingExpiration, CacheItemPriority.High, null);
-			}
-			return (WorkflowConfig)HttpContext.Current.Cache[cacheName];
+            WorkflowConfig config = null;
+            _memoryCache.TryGetValue<WorkflowConfig>(cacheName, out config);
+            if(config == null)
+            {
+                string fileName = GetFileName("workflowconfig.xml");
+                config = ReadConfig(fileName);
+                _memoryCache.Set(cacheName, config);
+            }
+            return config;
+			//if (HttpContext.Current == null)
+			//{
+			//	string fileName = GetFileName("workflowconfig.xml");
+			//	WorkflowConfig config = ReadConfig(fileName);
+			//	return config;
+			//}
+			//if (HttpContext.Current.Cache[cacheName] == null)
+			//{
+			//	string fileName = GetFileName("workflowconfig.xml");
+			//	WorkflowConfig config = ReadConfig(fileName);
+			//	CacheDependency fileDependency = new System.Web.Caching.CacheDependency(fileName);
+			//	HttpContext.Current.Cache.Add(cacheName, config, fileDependency, DateTime.MaxValue, System.Web.Caching.Cache.NoSlidingExpiration, CacheItemPriority.High, null);
+			//}
+			//return (WorkflowConfig)HttpContext.Current.Cache[cacheName];
 		}
 
 		private WorkflowConfig ReadConfig(string fileName)

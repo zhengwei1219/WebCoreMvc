@@ -12,6 +12,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="2.1.2" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
     <PackageReference Include="Microsoft.Extensions.Identity.Core" Version="2.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.BrowserLink" Version="2.1.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
   </ItemGroup>
 
@@ -26,7 +27,7 @@
       <HintPath>C:\Program Files\dotnet\sdk\NuGetFallbackFolder\microsoft.applicationinsights.aspnetcore\2.1.1\lib\netstandard1.6\Microsoft.ApplicationInsights.AspNetCore.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualStudio.Web.BrowserLink">
-      <HintPath>C:\Users\Administrator\.nuget\packages\microsoft.visualstudio.web.browserlink\2.0.0\lib\netstandard2.0\Microsoft.VisualStudio.Web.BrowserLink.dll</HintPath>
+      <HintPath>C:\Users\Administrator\.nuget\packages\microsoft.visualstudio.web.browserlink\2.1.0\lib\netstandard2.0\Microsoft.VisualStudio.Web.BrowserLink.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -2,8 +2,11 @@ using System;
 using System.Web;
 using System.Collections.Generic;
 using System.Text;
-using System.Web.Profile;
-using System.Web.Security;
+using BLL;
+using System.Linq;
+using Microsoft.AspNetCore.Http;
+using System.Security.Claims;
+using Model;
 
 namespace Workflows
 {
@@ -45,8 +48,15 @@ namespace Workflows
 	/// </summary>
 	public class HttpIdentityService : IIdentityService
 	{
-		#region IIdentityService Members
-		private Dictionary<string, IdentitiyCache> identityCache = new Dictionary<string, IdentitiyCache>();
+        ISysUserService _userService;
+        IHttpContextAccessor _httpContextAccessor;
+        public HttpIdentityService(ISysUserService userService, IHttpContextAccessor httpContextAccessor)
+        {
+            _userService = userService;
+            _httpContextAccessor = httpContextAccessor;
+        }
+        #region IIdentityService Members
+        private Dictionary<string, IdentitiyCache> identityCache = new Dictionary<string, IdentitiyCache>();
 
 		/// <summary>
 		/// Gets all users.
@@ -54,13 +64,14 @@ namespace Workflows
 		/// <returns></returns>
 		public string[] GetAllUsers()
 		{
-			List<string> users = new List<string>();
-			MembershipUserCollection mUsers = Membership.GetAllUsers();
-			foreach (MembershipUser user in mUsers)
-			{
-				users.Add(user.UserName);
-			}
-			return users.ToArray();
+            return  _userService.GetAll().Select(s => s.Name).ToArray();
+			//List<string> users = new List<string>();
+			//MembershipUserCollection mUsers = Membership.GetAllUsers();
+			//foreach (MembershipUser user in mUsers)
+			//{
+			//	users.Add(user.UserName);
+			//}
+			//return users.ToArray();
 		}
 
 		/// <summary>
@@ -69,8 +80,9 @@ namespace Workflows
 		/// <returns></returns>
 		public IUserIdentity GetUserIdentity()
 		{
-			return GetUserIdentity(HttpContext.Current.User.Identity.Name);
-		}
+            return GetUserIdentity(_httpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.NameIdentifier).Value);
+            //return GetUserIdentity(HttpContext.Current.User.Identity.Name);
+        }
 
 		/// <summary>
 		/// 根据用户的ID获取用户的身份信息,如果userId为空,那么返回null
@@ -92,12 +104,15 @@ namespace Workflows
 		/// <param name="userId">The user id.</param>
 		private void LoadIdentity(string userId)
 		{
-			ProfileBase profile = ProfileBase.Create(userId);
-			string userName = profile.GetPropertyValue("Name").ToString();
-			string unitCode = profile.GetPropertyValue("UnitCode").ToString();
-			HttpUserIdentity identity = new HttpUserIdentity(userId, userName, unitCode, profile);
-			identityCache[userId] = new IdentitiyCache(identity);
-		}
+           SysUser user = _userService.getByAccount(userId);
+            HttpUserIdentity identity = new HttpUserIdentity(userId, user.Name, user.Email,user);
+            identityCache[userId] = new IdentitiyCache(identity);
+            //         ProfileBase profile = ProfileBase.Create(userId);
+            //string userName = profile.GetPropertyValue("Name").ToString();
+            //string unitCode = profile.GetPropertyValue("UnitCode").ToString();
+            //HttpUserIdentity identity = new HttpUserIdentity(userId, userName, unitCode, profile);
+            //identityCache[userId] = new IdentitiyCache(identity);
+        }
 		private HttpUserInRole userInRole = HttpUserInRole.Instance;
 		/// <summary>
 		/// Gets the user in role.
